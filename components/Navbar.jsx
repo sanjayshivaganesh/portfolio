@@ -5,13 +5,13 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const links = [
-  { href: '#about', label: 'About' },
-  { href: '#work', label: 'Work' },
-  { href: '#research', label: 'Research' },
-  { href: '#leadership', label: 'Leadership' },
-  { href: '#achievements', label: 'Achievements' },
-  { href: '#services', label: 'Services' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'About' },
+  { href: '/#work', label: 'Work' },
+  { href: '/#research', label: 'Research' },
+  { href: '/#leadership', label: 'Leadership' },
+  { href: '/#achievements', label: 'Achievements' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -55,9 +55,13 @@ export default function Navbar() {
           ))}
         </ul>
         <a
-          href="#contact"
-          className="hidden rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-medium text-slate-200 transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white md:inline-flex"
+          href="/#contact"
+          className="hidden items-center gap-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 px-4 py-2 text-xs font-medium text-white shadow-[0_8px_25px_-10px_rgba(99,102,241,0.7)] ring-1 ring-white/10 transition hover:from-indigo-400 hover:to-blue-400 md:inline-flex"
         >
+          <span className="relative inline-flex h-1.5 w-1.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/70 opacity-60" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white" />
+          </span>
           Work With Me
         </a>
         <button

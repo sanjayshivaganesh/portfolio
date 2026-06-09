@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Github, Search } from 'lucide-react';
 import SectionHeader from '../SectionHeader';
@@ -116,12 +117,12 @@ export default function Projects() {
                     >
                       <Github size={13} />
                     </a>
-                    <a
-                      href={p.demo}
+                    <Link
+                      href={`/projects/${p.slug}`}
                       className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] text-slate-200 transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white"
                     >
-                      View <ArrowUpRight size={11} />
-                    </a>
+                      Case study <ArrowUpRight size={11} />
+                    </Link>
                   </div>
                 </div>
               </div>
