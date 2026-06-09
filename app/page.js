@@ -1,14 +1,11 @@
 import Navbar from '@/components/Navbar';
 import ScrollProgress from '@/components/ScrollProgress';
 import Hero from '@/components/sections/Hero';
-import About from '@/components/sections/About';
-import Projects from '@/components/sections/Projects';
-import Research from '@/components/sections/Research';
-import Timeline from '@/components/sections/Timeline';
-import Achievements from '@/components/sections/Achievements';
-import Education from '@/components/sections/Education';
-import Services from '@/components/sections/Services';
-import Contact from '@/components/sections/Contact';
+import ResearchPreview from '@/components/sections/ResearchPreview';
+import FeaturedProjects from '@/components/sections/FeaturedProjects';
+import LeadershipImpact from '@/components/sections/LeadershipImpact';
+import WorkWithMePreview from '@/components/sections/WorkWithMePreview';
+import ContactPreview from '@/components/sections/ContactPreview';
 import Footer from '@/components/sections/Footer';
 
 function App() {
@@ -18,30 +15,22 @@ function App() {
       <Navbar />
       <Hero />
       <SectionDivider />
-      <About />
+      <ResearchPreview />
       <SectionDivider />
-      <Projects />
+      <FeaturedProjects />
       <SectionDivider />
-      <Research />
+      <LeadershipImpact />
       <SectionDivider />
-      <Timeline />
+      <WorkWithMePreview />
       <SectionDivider />
-      <Achievements />
-      <SectionDivider />
-      <Education />
-      <SectionDivider />
-      <Services />
-      <SectionDivider />
-      <Contact />
+      <ContactPreview />
       <Footer />
     </main>
   );
 }
 
 function SectionDivider() {
-  return (
-    <div className="mx-auto h-px max-w-7xl bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-  );
+  return <div className="mx-auto h-px max-w-7xl bg-gradient-to-r from-transparent via-white/10 to-transparent" />;
 }
 
 export default App;

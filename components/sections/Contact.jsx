@@ -34,11 +34,12 @@ export default function Contact() {
       </div>
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <SectionHeader
-            eyebrow="Contact"
-            title="Let's build something ambitious."
-            description="Reach out for research collaborations, product builds, or to discuss anything at the intersection of quantum computing, AI, and software."
-          />
+          <div className="space-y-3">
+            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">Send a message</h2>
+            <p className="text-sm leading-relaxed text-slate-400">
+              The fastest way to get in touch. I read every message and reply personally.
+            </p>
+          </div>
           <div className="mt-8 space-y-3">
             <a
               href={`mailto:${profile.email}`}
