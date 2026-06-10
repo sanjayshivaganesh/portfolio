@@ -32,7 +32,7 @@ export default function RelatedProjects({ projects = [] }) {
             transition={{ duration: 0.5, delay: i * 0.05 }}
           >
             <Link
-              href={`/projects/${p.slug}`}
+              href={`/projects/${p.slug || p.id}`}
               className="group block h-full overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-5 transition hover:border-white/20"
             >
               <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-slate-400">
@@ -43,7 +43,7 @@ export default function RelatedProjects({ projects = [] }) {
                 />
               </div>
               <div className="mt-4 text-lg font-semibold text-white">{p.title}</div>
-              <p className="mt-2 line-clamp-3 text-sm text-slate-400">{p.description}</p>
+              <p className="mt-2 line-clamp-3 text-sm text-slate-400">{p.shortDescription}</p>
               <div className="mt-5 inline-flex items-center gap-1 text-xs text-slate-300 transition group-hover:text-white">
                 Read case study <ArrowUpRight size={12} className="transition group-hover:translate-x-0.5" />
               </div>
