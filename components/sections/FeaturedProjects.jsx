@@ -15,8 +15,8 @@ export default function FeaturedProjects() {
     <section id="work" className="relative mx-auto max-w-7xl px-6 py-24">
       <SectionHeader
         eyebrow="Featured Projects"
-        title="Selected work — research, AI, and accessibility."
-        description="Three projects that best represent the kind of technology I build today."
+        title="Proof — what I'm building right now."
+        description="Three projects that best demonstrate how I move from research questions and real problems to working software."
       />
 
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -40,7 +40,15 @@ export default function FeaturedProjects() {
                 <span className="h-2.5 w-2.5 rounded-full" style={{ background: p.accent, boxShadow: `0 0 14px 2px ${p.accent}55` }} />
               </div>
               <p className="mt-3 text-sm leading-relaxed text-slate-400">{p.description}</p>
-              <div className="mt-5 flex flex-wrap gap-1.5">
+              {p.outcomes?.[0] && (
+                <div className="mt-4 flex items-start gap-2 rounded-lg border border-indigo-400/15 bg-indigo-500/[0.06] p-2.5">
+                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-300" />
+                  <span className="text-[11px] leading-relaxed text-indigo-100/90">
+                    {p.outcomes[0]}
+                  </span>
+                </div>
+              )}
+              <div className="mt-4 flex flex-wrap gap-1.5">
                 {p.technologies.slice(0, 4).map((t) => (
                   <span key={t} className="rounded-md border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] text-slate-300">
                     {t}

@@ -86,7 +86,7 @@ export default function ResearchPreview() {
             href="/research"
             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-slate-100 transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white"
           >
-            View Research <ArrowRight size={14} />
+            Explore Research <ArrowRight size={14} />
           </Link>
         </div>
       </div>

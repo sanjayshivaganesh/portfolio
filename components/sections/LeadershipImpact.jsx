@@ -22,9 +22,9 @@ export default function LeadershipImpact() {
   return (
     <section id="leadership" className="relative mx-auto max-w-7xl px-6 py-24">
       <SectionHeader
-        eyebrow="Leadership & Impact"
-        title="Initiative, mentorship, and recognition."
-        description="Selected leadership roles and academic honors that shape how I approach problems and people."
+        eyebrow="Impact & Leadership"
+        title="Recognition, initiative, and mentorship."
+        description="Proof points from school leadership, academics, and community work."
       />
 
       <div className="mt-12 grid gap-10 lg:grid-cols-12">

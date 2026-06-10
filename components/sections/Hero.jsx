@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { ArrowRight, MapPin, Sparkles } from 'lucide-react';
 import ParticleField from '../ParticleField';
 import profile from '@/lib/data/profile';
@@ -81,25 +82,34 @@ export default function Hero() {
           {profile.subheadline}
         </motion.p>
 
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-500"
+        >
+          Building at the intersection of quantum computing, AI, and applied intelligent systems.
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-8 flex flex-wrap items-center gap-3"
         >
-          <a
-            href="#work"
+          <Link
+            href="/projects"
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 px-5 py-2.5 text-sm font-medium text-white shadow-[0_10px_40px_-10px_rgba(99,102,241,0.6)] transition hover:from-indigo-400 hover:to-blue-400"
           >
             Explore My Work
             <ArrowRight size={16} className="transition group-hover:translate-x-0.5" />
-          </a>
-          <a
-            href="#services"
+          </Link>
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-slate-200 backdrop-blur transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white"
           >
             Work With Me
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div
