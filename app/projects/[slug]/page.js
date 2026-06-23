@@ -8,6 +8,7 @@ import Footer from '@/components/sections/Footer';
 import HeroHeader from '@/components/project/HeroHeader';
 import ProblemSection from '@/components/project/ProblemSection';
 import SolutionSection from '@/components/project/SolutionSection';
+import StructuredDetails from '@/components/project/StructuredDetails';
 import ArchitectureGrid from '@/components/project/ArchitectureGrid';
 import TechStackPills from '@/components/project/TechStackPills';
 import ChallengesList from '@/components/project/ChallengesList';
@@ -87,10 +88,17 @@ export default function ProjectPage({ params }) {
 
           {/* main */}
           <article className="space-y-14 lg:col-span-8">
-            <ProblemSection problem={project.problem} context={project.context} />
+            <ProblemSection problem={project.problem_statement || project.problem} context={project.context} />
             <SolutionSection solution={project.solution} />
+            <StructuredDetails
+              technicalImplementation={project.technical_implementation}
+              currentProgress={project.current_progress}
+              keyFeatures={project.key_features}
+              outputOrArtifacts={project.output_or_artifacts}
+              constraintsOrChallenges={project.constraints_or_challenges}
+            />
             <ArchitectureGrid architecture={project.architecture} accent={accent} />
-            <TechStackPills techStack={project.techStack} />
+            <TechStackPills techStack={project.tech_stack || project.techStack} />
             <ChallengesList challenges={project.challenges} />
             <LearningsList learnings={project.learnings} />
             <FutureWorkBlock futureWork={project.futureWork} />

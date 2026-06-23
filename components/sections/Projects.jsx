@@ -18,8 +18,8 @@ export default function Projects() {
       const matchQuery =
         !q ||
         p.title.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
-        p.technologies.join(' ').toLowerCase().includes(q);
+        (p.shortDescription || '').toLowerCase().includes(q) ||
+        (p.techStack || []).join(' ').toLowerCase().includes(q);
       return matchCat && matchQuery;
     });
   }, [filter, query]);
@@ -86,10 +86,10 @@ export default function Projects() {
                     style={{ background: p.accent, boxShadow: `0 0 14px 2px ${p.accent}55` }}
                   />
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">{p.description}</p>
-                {p.features?.length > 0 && (
+                <p className="mt-3 text-sm leading-relaxed text-slate-400">{p.shortDescription}</p>
+                {p.key_features?.length > 0 && (
                   <ul className="mt-4 space-y-1.5">
-                    {p.features.slice(0, 3).map((f) => (
+                    {p.key_features.slice(0, 3).map((f) => (
                       <li key={f} className="flex items-start gap-2 text-xs text-slate-300">
                         <span className="mt-1.5 inline-block h-1 w-1 rounded-full bg-indigo-400" />
                         <span>{f}</span>
@@ -98,7 +98,7 @@ export default function Projects() {
                   </ul>
                 )}
                 <div className="mt-5 flex flex-wrap gap-1.5">
-                  {p.technologies.map((t) => (
+                  {(p.techStack || []).map((t) => (
                     <span
                       key={t}
                       className="rounded-md border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] text-slate-300"
@@ -110,13 +110,15 @@ export default function Projects() {
                 <div className="mt-6 flex items-center justify-between">
                   <span className="text-[11px] text-slate-500">{p.role}</span>
                   <div className="flex items-center gap-2">
-                    <a
-                      href={p.github}
-                      className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-white/10 text-slate-300 transition hover:border-white/30 hover:text-white"
-                      aria-label="GitHub"
-                    >
-                      <Github size={13} />
-                    </a>
+                    {p.links?.github && (
+                      <a
+                        href={p.links.github}
+                        className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-white/10 text-slate-300 transition hover:border-white/30 hover:text-white"
+                        aria-label="GitHub"
+                      >
+                        <Github size={13} />
+                      </a>
+                    )}
                     <Link
                       href={`/projects/${p.slug}`}
                       className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] text-slate-200 transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white"
@@ -141,13 +143,11 @@ export default function Projects() {
 
 function StatusBadge({ status }) {
   const map = {
-    'Active Development': { dot: 'bg-emerald-400', text: 'text-emerald-300', ring: 'ring-emerald-400/30' },
-    'Live': { dot: 'bg-blue-400', text: 'text-blue-300', ring: 'ring-blue-400/30' },
-    'Research Prototype': { dot: 'bg-violet-400', text: 'text-violet-300', ring: 'ring-violet-400/30' },
-    'In Development': { dot: 'bg-amber-400', text: 'text-amber-300', ring: 'ring-amber-400/30' },
-    'Ongoing': { dot: 'bg-sky-400', text: 'text-sky-300', ring: 'ring-sky-400/30' },
+    Completed: { dot: 'bg-blue-400', text: 'text-blue-300', ring: 'ring-blue-400/30' },
+    'In Progress': { dot: 'bg-emerald-400', text: 'text-emerald-300', ring: 'ring-emerald-400/30' },
+    'Not Started': { dot: 'bg-slate-400', text: 'text-slate-300', ring: 'ring-slate-400/30' },
   };
-  const s = map[status] || map['Active Development'];
+  const s = map[status] || map['In Progress'];
   return (
     <span className={`inline-flex items-center gap-1.5 rounded-full bg-white/[0.03] px-2 py-0.5 text-[10px] ring-1 ${s.ring} ${s.text}`}>
       <span className={`h-1.5 w-1.5 rounded-full ${s.dot}`} />

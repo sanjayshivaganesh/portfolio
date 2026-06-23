@@ -31,7 +31,7 @@ export default function ProjectsPage() {
   const stats = useMemo(() => {
     const techs = new Set();
     projects.forEach((p) => (p.techStack || []).forEach((t) => techs.add(t)));
-    const active = projects.filter((p) => /Active|Development|Ongoing/i.test(p.status)).length;
+    const active = projects.filter((p) => p.status === 'In Progress').length;
     return [
       { k: 'Projects', v: projects.length },
       { k: 'Active', v: active },
@@ -157,13 +157,11 @@ export default function ProjectsPage() {
 
 function StatusBadge({ status }) {
   const map = {
-    'Active Development': { dot: 'bg-emerald-400', text: 'text-emerald-300', ring: 'ring-emerald-400/30' },
-    'Live': { dot: 'bg-blue-400', text: 'text-blue-300', ring: 'ring-blue-400/30' },
-    'Research Prototype': { dot: 'bg-violet-400', text: 'text-violet-300', ring: 'ring-violet-400/30' },
-    'In Development': { dot: 'bg-amber-400', text: 'text-amber-300', ring: 'ring-amber-400/30' },
-    'Ongoing': { dot: 'bg-sky-400', text: 'text-sky-300', ring: 'ring-sky-400/30' },
+    Completed: { dot: 'bg-blue-400', text: 'text-blue-300', ring: 'ring-blue-400/30' },
+    'In Progress': { dot: 'bg-emerald-400', text: 'text-emerald-300', ring: 'ring-emerald-400/30' },
+    'Not Started': { dot: 'bg-slate-400', text: 'text-slate-300', ring: 'ring-slate-400/30' },
   };
-  const s = map[status] || map['Active Development'];
+  const s = map[status] || map['In Progress'];
   return (
     <span className={`inline-flex items-center gap-1.5 rounded-full bg-white/[0.03] px-2 py-0.5 text-[10px] ring-1 ${s.ring} ${s.text}`}>
       <span className={`h-1.5 w-1.5 rounded-full ${s.dot}`} />
