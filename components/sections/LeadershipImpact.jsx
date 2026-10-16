@@ -8,6 +8,7 @@ const iconMap = { crown: Crown, star: Star, award: Award, trophy: Trophy, flask:
 
 const timeline = [
   { title: 'Deputy Head Boy', org: 'CPS Global School', period: '2024 – 2025', description: 'Elected to represent the senior student body, leading school-wide initiatives across academics, wellbeing, and student voice.' },
+  { title: 'Mathematics Tutor — Yein Udaan Foundation', org: 'Community Impact', period: 'Completed · Future undecided', description: 'Volunteer mathematics teacher for underprivileged students over a cumulative ten weeks: a six-week programme approximately two years ago, plus an additional four-week programme earlier in 2026. Previously completed volunteering is finished; whether to restart or continue has not been decided.' },
   { title: 'Mental Health Week Initiatives', org: 'Student Leadership', period: '2024', description: 'Designed and launched digital experiences for school-wide Mental Health Week.' },
   { title: 'Peer Tutoring Programs', org: 'Academic Mentorship', period: '2023 – Present', description: 'Mentor peers in Computer Science, Physics, and Mathematics — translating advanced concepts into clear learning paths.' },
 ];

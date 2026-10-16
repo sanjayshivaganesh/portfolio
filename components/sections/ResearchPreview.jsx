@@ -28,7 +28,7 @@ export default function ResearchPreview() {
         <SectionHeader
           eyebrow="Research & Frontier Technologies"
           title="Quantum, AI, and the systems that learn."
-          description="Studying how quantum computing, machine learning, and emerging technologies can be brought together to expand what intelligent systems are capable of."
+          description="Combining theoretical investigation with practical implementation of AI systems across artificial intelligence, machine learning, quantum machine learning, optimisation, and human-centred computing."
         />
 
         <motion.div

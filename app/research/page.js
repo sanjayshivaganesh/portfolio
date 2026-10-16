@@ -10,9 +10,9 @@ import Footer from '@/components/sections/Footer';
 import { featuredResearch, researchInterests, researchTimeline, futurePapers } from '@/lib/data/research';
 
 const roadmap = [
-  { phase: 'Now', title: 'Complete Hopfield comparative analysis', detail: 'Finalize experiments and submit the paper for review.' },
+  { phase: 'Now', title: 'Advance publication submissions', detail: 'Await CJSJ results, continue PJPCR submission, and track the INSEF state-space Hopfield submission.' },
   { phase: 'Next', title: 'Quantum-Assisted Optimization for ML Training', detail: 'Benchmark variational optimizers against classical baselines on small ML tasks.' },
-  { phase: 'Later', title: 'Educational Frameworks for QML', detail: 'Curate interactive learning paths that translate QML theory into intuition.' },
+  { phase: 'Later', title: 'Educational Frameworks for QML', detail: 'Continue expanding interactive learning paths that translate QML theory into intuition.' },
   { phase: 'Long-term', title: 'Apply to research-driven CS programs', detail: 'Pursue undergraduate research at top programs aligned with quantum and AI.' },
 ];
 
@@ -160,18 +160,29 @@ export default function ResearchPage() {
         <section className="mt-20 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <SectionLabel icon={<FileText size={14} />}>Publications</SectionLabel>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-[1.7rem]">In progress</h2>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-[1.7rem]">Current publications</h2>
             <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5">
               <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-amber-200">
-                <span className="h-1.5 w-1.5 rounded-full bg-amber-300" /> Research Paper In Progress
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-300" /> {featuredResearch.status}
               </div>
               <div className="mt-3 text-sm font-medium text-white">{featuredResearch.title}</div>
               <p className="mt-2 text-xs leading-relaxed text-slate-400">
-                Comparative study with implementation, experiments, and theoretical framing.
+                Research and implementation complete. Paper live on Zenodo; CJSJ results awaited and PJPCR submission ongoing.
+              </p>
+            </div>
+            <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-amber-200">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-300" /> Submitted to INSEF
+              </div>
+              <div className="mt-3 text-sm font-medium text-white">
+                A State-Space Analysis of Retrieval Landscapes in Classical and Quantum Hopfield Associative Memory
+              </div>
+              <p className="mt-2 text-xs leading-relaxed text-slate-400">
+                Separate completed research project with open-source implementation and reproducible experimental framework. Submitted to INSEF; no award or further-stage advancement claimed.
               </p>
             </div>
             <div className="mt-3 rounded-2xl border border-dashed border-white/10 bg-white/[0.01] p-5 text-xs text-slate-500">
-              Additional preprints, notes, and write-ups will appear here as research matures.
+              Additional notes and write-ups will appear here as publication processes progress.
             </div>
           </div>
 

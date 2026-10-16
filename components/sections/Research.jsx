@@ -27,7 +27,7 @@ export default function Research() {
         <SectionHeader
           eyebrow="Research & Frontier Technologies"
           title="Investigating intelligence — classical, quantum, and hybrid."
-          description="A growing body of work studying how computation, learning systems, and quantum mechanics can be brought together to expand what intelligent systems are capable of."
+          description="Combining theoretical investigation with practical implementation of AI systems across artificial intelligence, machine learning, quantum machine learning, optimisation, and human-centred computing."
         />
 
         {/* Featured paper */}
