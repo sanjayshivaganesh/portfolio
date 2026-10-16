@@ -44,7 +44,7 @@ export default function Navbar() {
             SS
             <span className="absolute inset-0 rounded-md ring-1 ring-white/20" />
           </span>
-          <span className="text-sm font-medium tracking-wide text-slate-200">Sanjay Shivaganesh</span>
+          <span className="text-sm font-medium tracking-wide text-slate-200 font-display">Sanjay Shivaganesh</span>
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">

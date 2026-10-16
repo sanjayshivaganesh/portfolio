@@ -36,6 +36,11 @@
     font-feature-settings: 'ss01', 'cv11';
   }
 
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;

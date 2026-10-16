@@ -1,10 +1,24 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, Sora, JetBrains_Mono } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-sans',
+});
+
+const sora = Sora({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-display',
+  weight: ['400', '500', '600', '700'],
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono',
+  weight: ['400', '500'],
 });
 
 export const metadata = {
@@ -52,7 +66,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} dark`}>
+    <html lang="en" className={`${inter.variable} ${sora.variable} ${jetbrains.variable} dark`}>
       <body className="min-h-screen bg-[#070b1c] font-sans text-slate-200 antialiased selection:bg-indigo-500/30 selection:text-white">
         {children}
       </body>

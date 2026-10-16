@@ -7,7 +7,7 @@ import SectionHeader from '../SectionHeader';
 const iconMap = { crown: Crown, star: Star, award: Award, trophy: Trophy, flask: FlaskConical, code: Code2 };
 
 const timeline = [
-  { title: 'Deputy Head Boy', org: 'CPS Global School', period: '2024 – Present', description: 'Elected to represent the senior student body, leading school-wide initiatives across academics, wellbeing, and student voice.' },
+  { title: 'Deputy Head Boy', org: 'CPS Global School', period: '2024 – 2025', description: 'Elected to represent the senior student body, leading school-wide initiatives across academics, wellbeing, and student voice.' },
   { title: 'Mental Health Week Initiatives', org: 'Student Leadership', period: '2024', description: 'Designed and launched digital experiences for school-wide Mental Health Week.' },
   { title: 'Peer Tutoring Programs', org: 'Academic Mentorship', period: '2023 – Present', description: 'Mentor peers in Computer Science, Physics, and Mathematics — translating advanced concepts into clear learning paths.' },
 ];

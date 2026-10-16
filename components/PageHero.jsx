@@ -27,7 +27,7 @@ export default function PageHero({ eyebrow, title, description, children }) {
             {eyebrow}
           </div>
         )}
-        <h1 className="mt-5 max-w-4xl text-[clamp(2.2rem,5vw,3.8rem)] font-semibold leading-[1.05] tracking-tight text-white">
+        <h1 className="mt-5 max-w-4xl font-display text-[clamp(2.2rem,5vw,3.8rem)] font-semibold leading-[1.05] tracking-tight text-white">
           {title}
         </h1>
         {description && (
